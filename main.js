@@ -1,6 +1,6 @@
 const mobileMenu = document.querySelector("nav .mobile-menu");
 const mobileClose = document.querySelector("nav .mobile-close");
-const mobileNav = document.querySelector("nav .mobile-nav");
+const mobileNav = document.querySelector(".mobile-nav");
 
 mobileMenu.addEventListener("click", () => {
     mobileNav.classList.add("active");
