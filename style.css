@@ -294,6 +294,10 @@ nav .mobile-close {
         padding: 16px 32px;
     }
 
+    .logo {
+        z-index: 300;
+    }
+
     .logo img {
         height: 56px;
     }
@@ -345,7 +349,7 @@ nav .mobile-close {
         display: block;
         position: fixed;
         top: 0;
-        z-index: -100;
+        z-index: 200;
     }
 
     .bg-bottom-mobile {
@@ -375,6 +379,7 @@ nav .mobile-close {
         width: 100%;
         opacity: 0;
         pointer-events: none;
+        transition: all 400ms;
     }
 
     nav.mobile-nav.active {
@@ -391,10 +396,23 @@ nav .mobile-close {
 
     nav.mobile-nav ul li {
         margin: 16px 0;
+        opacity: 0;
+        transform: translateY(-16px);
     }
 
     nav.mobile-nav ul li:last-child {
         margin-top: 24px;
+    }
+
+    nav.mobile-nav.active ul li {
+        animation: mobile-nav-li 1000ms forwards;
+    }
+
+    @keyframes mobile-nav-li {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }   
     }
 
     nav .mobile-close,
